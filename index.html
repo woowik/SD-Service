@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ระบบบริการงานสนับสนุน · กอง สน.พร.</title>
+<meta name="theme-color" content="#071B36">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="กอง สน.พร.">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="manifest" href="manifest.json">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#D4AF37;--gold1:#F6E27A;--cyan:#39B7FF;--ink:#EAF2FF;--mut:#8FA6C4;--metal:linear-gradient(180deg,#FFF4C2 0%,#F6E27A 22%,#D4AF37 48%,#9C7A1C 62%,#E9CF6B 82%,#FFF1B0 100%)}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#030A18;color:var(--ink);font-family:'Sarabun',Tahoma,sans-serif}
+body{background:radial-gradient(900px 500px at 70% -10%,rgba(57,183,255,.18),transparent 60%),linear-gradient(160deg,#071B36,#030A18 70%);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 16px calc(28px + env(safe-area-inset-bottom))}
+img.logo{width:190px;max-width:55vw;filter:drop-shadow(0 0 18px rgba(212,175,55,.5))}
+.k{font-size:12px;letter-spacing:4px;color:var(--cyan);margin-top:14px}
+h1{margin:6px 0 2px;font-size:28px;text-align:center;background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+.s{color:#DCEBFF;font-weight:600;margin-bottom:26px;text-align:center}
+.b{display:flex;gap:14px;align-items:center;width:100%;max-width:420px;padding:18px;margin-bottom:14px;border:1px solid rgba(57,183,255,.35);border-radius:6px;background:linear-gradient(160deg,rgba(14,42,80,.75),rgba(5,16,34,.85));color:var(--ink);text-decoration:none}
+.b:hover{border-color:var(--gold)}
+.b i{width:52px;height:52px;border-radius:50%;flex:none;display:grid;place-items:center;font-style:normal;font-size:24px;background:var(--metal);color:#1B1300}
+.b.c i{background:radial-gradient(circle at 35% 30%,#8ad7ff,#1d78c9 60%,#0b3f75);color:#fff}
+.b b{display:block;font-size:19px}.b span{color:var(--mut);font-size:14px}
+.h{max-width:420px;color:var(--mut);font-size:13px;line-height:1.6;margin-top:10px;text-align:center}
+</style>
+</head>
+<body>
+<img class="logo" src="icon-512.png" alt="">
+<div class="k">SUPPORT DIVISION</div>
+<h1>กองสนับสนุน กรมแพทย์ทหารเรือ</h1>
+<div class="s">ระบบบริการงานสนับสนุน</div>
+<a class="b" id="pub" href="#"><i>📝</i><div><b>ยื่นคำร้อง / ติดตามสถานะ</b><span>สำหรับหน่วยผู้ขอรับการสนับสนุน</span></div></a>
+<a class="b c" id="staff" href="#"><i>🔐</i><div><b>สำหรับเจ้าหน้าที่</b><span>ระบบบริหารงานซ่อมบำรุง (ชื่อ + PIN)</span></div></a>
+<div class="h">เพิ่มไอคอนไว้บนหน้าจอหลัก: iPhone กดปุ่มแชร์ → "เพิ่มไปยังหน้าจอโฮม" · Android กดเมนู ⋮ → "เพิ่มลงในหน้าจอหลัก"</div>
+<script>
+// ลิงก์เว็บแอป (Deploy → Manage deployments → Web app URL ที่ลงท้ายด้วย /exec)
+var APP = 'https://script.google.com/macros/s/ใส่รหัสเว็บแอปที่นี่/exec';
+document.getElementById('pub').href = APP;
+document.getElementById('staff').href = APP + '?page=staff';
+// เปิดจากไอคอนหน้าจอหลักพร้อมพารามิเตอร์ ?go=staff → ไปหน้าเจ้าหน้าที่ทันที
+if (/[?&]go=staff/.test(location.search)) location.replace(APP + '?page=staff');
+</script>
+</body>
+</html>
