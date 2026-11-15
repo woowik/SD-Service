@@ -179,7 +179,12 @@ a.card{text-decoration:none;color:inherit}
 a.slink{text-decoration:none}
 .a2hs{max-width:520px;margin:22px auto 0;padding:0 16px;color:var(--mut);font-size:13.5px;line-height:1.65;text-align:center}
 .a2hs b{color:var(--gold1)}
-main{padding-bottom:env(safe-area-inset-bottom)}
+/* เต็มจอเมื่อเปิดจากไอคอนหน้าจอโฮม: กันแถบสถานะด้านบน + จัดเนื้อหาไว้กลางจอ */
+html,body{height:100%}
+body{min-height:100vh;min-height:100dvh;background-attachment:scroll}
+main{min-height:100vh;min-height:100dvh;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;
+  padding:calc(env(safe-area-inset-top) + 18px) 16px calc(env(safe-area-inset-bottom) + 18px)}
+#home{width:100%}
 </style>
 </head>
 <body class="home">
